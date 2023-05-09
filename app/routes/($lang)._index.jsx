@@ -1,7 +1,7 @@
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
-import {ProductSwimlane, FeaturedCollections, Hero} from '~/components';
+import {ProductSwimlane, FeaturedCollections, Hero,SelectProduct,ProductDetails} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {seoPayload} from '~/lib/seo.server';
@@ -98,11 +98,14 @@ export default function Homepage() {
 
   return (
     <>
-      {primaryHero && (
+      {/* {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
+      )} */}
 
-      {featuredProducts && (
+      <SelectProduct className={''} />
+      <ProductDetails className={''} />
+
+      {/* {featuredProducts && (
         <Suspense>
           <Await resolve={featuredProducts}>
             {({products}) => {
@@ -117,9 +120,9 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
 
-      {secondaryHero && (
+      {/* {secondaryHero && (
         <Suspense fallback={<Hero {...skeletons[1]} />}>
           <Await resolve={secondaryHero}>
             {({hero}) => {
@@ -128,9 +131,9 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
 
-      {featuredCollections && (
+      {/* {featuredCollections && (
         <Suspense>
           <Await resolve={featuredCollections}>
             {({collections}) => {
@@ -144,9 +147,9 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
 
-      {tertiaryHero && (
+      {/* {tertiaryHero && (
         <Suspense fallback={<Hero {...skeletons[2]} />}>
           <Await resolve={tertiaryHero}>
             {({hero}) => {
@@ -155,7 +158,7 @@ export default function Homepage() {
             }}
           </Await>
         </Suspense>
-      )}
+      )} */}
     </>
   );
 }

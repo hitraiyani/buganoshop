@@ -254,3 +254,108 @@ export function IconFilters(props) {
     </Icon>
   );
 }
+
+export function IconInfo(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width={16}
+      height={16}
+      viewBox="0 0 16 16"
+    >
+      <path
+        id="Icon_awesome-info-circle"
+        data-name="Icon awesome-info-circle"
+        d="M8.563.563a8,8,0,1,0,8,8A8,8,0,0,0,8.563.563Zm0,3.548A1.355,1.355,0,1,1,7.208,5.466,1.355,1.355,0,0,1,8.563,4.111ZM10.369,12.3a.387.387,0,0,1-.387.387H7.143a.387.387,0,0,1-.387-.387V11.53a.387.387,0,0,1,.387-.387H7.53V9.079H7.143a.387.387,0,0,1-.387-.387V7.917a.387.387,0,0,1,.387-.387H9.208a.387.387,0,0,1,.387.387v3.226h.387a.387.387,0,0,1,.387.387Z"
+        transform="translate(-0.563 -0.563)"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+export function IconZoomOut(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="19.756"
+      height={20}
+      viewBox="0 0 19.756 20"
+    >
+      <g
+        id="zoom_out"
+        data-name="zoom out"
+        transform="translate(-635.122 -173)"
+      >
+        <path
+          id="Path_15420"
+          data-name="Path 15420"
+          d="M19.722,17.851l-2.009-2.371a.985.985,0,0,1-.156-1.2,9.179,9.179,0,1,0-3.272,3.272.985.985,0,0,1,1.2.156l1.987,2.016a1.983,1.983,0,0,0,1.2.74,1.175,1.175,0,0,0,1.251-.379,1.687,1.687,0,0,0-.193-2.238ZM3.742,10.678a6,6,0,1,1,4.9,4.9,6.012,6.012,0,0,1-4.9-4.9Z"
+          transform="translate(634.622 172.5)"
+        />
+        <line
+          id="Line_1"
+          data-name="Line 1"
+          x2={6}
+          transform="translate(641.2 182.2)"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeWidth={2}
+        />
+      </g>
+    </svg>
+  );
+}
+export function IconFullScreen(props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20">
+    <path id="Icon_awesome-expand-arrows-alt" data-name="Icon awesome-expand-arrows-alt" d="M20,16.179v5a1.069,1.069,0,0,1-1.071,1.071h-5a1.073,1.073,0,0,1-.759-1.83L14.786,18.8,10,14.018l-4.787,4.79L6.83,20.42a1.073,1.073,0,0,1-.759,1.83h-5A1.069,1.069,0,0,1,0,21.179v-5a1.073,1.073,0,0,1,1.83-.759l1.616,1.616L8.235,12.25,3.446,7.46,1.83,9.08A1.073,1.073,0,0,1,0,8.321v-5A1.069,1.069,0,0,1,1.071,2.25h5A1.073,1.073,0,0,1,6.83,4.08L5.214,5.7,10,10.482l4.787-4.79L13.17,4.08a1.073,1.073,0,0,1,.759-1.83h5A1.069,1.069,0,0,1,20,3.321v5a1.073,1.073,0,0,1-1.83.759L16.554,7.464,11.765,12.25l4.789,4.79,1.615-1.616A1.071,1.071,0,0,1,20,16.179Z" transform="translate(0 -2.25)" />
+  </svg>
+  );
+}
+
+export function IconZoomIn(props) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="19.756"
+      height={20}
+      viewBox="0 0 19.756 20"
+    >
+      <g id="Group_5" data-name="Group 5" transform="translate(-635.122 -173)">
+        <path
+          id="Path_15421"
+          data-name="Path 15421"
+          d="M19.722,17.851l-2.009-2.371a.985.985,0,0,1-.156-1.2,9.179,9.179,0,1,0-3.272,3.272.985.985,0,0,1,1.2.156l1.987,2.016a1.983,1.983,0,0,0,1.2.74,1.175,1.175,0,0,0,1.251-.379,1.687,1.687,0,0,0-.193-2.238ZM3.742,10.678a6,6,0,1,1,4.9,4.9,6.012,6.012,0,0,1-4.9-4.9Z"
+          transform="translate(634.623 172.5)"
+          fill="currentColor"
+        />
+        <g id="Group_4" data-name="Group 4" transform="translate(-0.3 -0.3)">
+          <line
+            id="Line_2"
+            data-name="Line 2"
+            x2={6}
+            transform="translate(641.5 182.5)"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+          />
+          <line
+            id="Line_3"
+            data-name="Line 3"
+            x2={6}
+            transform="translate(644.5 179.5) rotate(90)"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeWidth={2}
+          />
+        </g>
+      </g>
+    </svg>
+  );
+}

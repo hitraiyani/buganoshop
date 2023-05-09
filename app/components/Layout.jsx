@@ -27,7 +27,6 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 export function Layout({children, layout}) {
   return (
     <>
-      <div className="flex flex-col min-h-screen">
         <div className="">
           <a href="#mainContent" className="sr-only">
             Skip to content
@@ -40,7 +39,6 @@ export function Layout({children, layout}) {
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
-      </div>
       <Footer menu={layout?.footerMenu} />
     </>
   );
