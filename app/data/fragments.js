@@ -42,6 +42,12 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
     title
     publishedAt
     handle
+    customizer_external_code: metafield(namespace: "custom", key: "customizer_external_code") {
+      value
+    }
+    sub_title: metafield(namespace: "custom", key: "sub_title") {
+      value
+    }
     variants(first: 1) {
       nodes {
         id

@@ -26,11 +26,16 @@ export async function loader({params, context}) {
     variables: {handle: 'freestyle'},
   });
 
+  const {custmizerCollection} = await context.storefront.query(HOMEPAGE_CUSTMISER_COLLECTION_QUERY, {
+    variables: {handle: 'frontpage'},
+  });
+
   const seo = seoPayload.home();
 
   return defer(
     {
       shop,
+      custmizerCollection,
       primaryHero: hero,
       // These different queries are separated to illustrate how 3rd party content
       // fetching can be optimized for both above and below the fold.
@@ -86,6 +91,7 @@ export async function loader({params, context}) {
 
 export default function Homepage() {
   const {
+    custmizerCollection,
     primaryHero,
     secondaryHero,
     tertiaryHero,
@@ -102,8 +108,8 @@ export default function Homepage() {
         <Hero {...primaryHero} height="full" top loading="eager" />
       )} */}
 
-      <SelectProduct className={''} />
-      <ProductDetails className={''} />
+      <SelectProduct products={custmizerCollection.products.nodes} className={''} />
+      {/* <ProductDetails className={''} /> */}
 
       {/* {featuredProducts && (
         <Suspense>
@@ -187,6 +193,22 @@ const COLLECTION_CONTENT_FRAGMENT = `#graphql
     spreadSecondary: metafield(namespace: "hero", key: "spread_secondary") {
       reference {
         ...Media
+      }
+    }
+  }
+`;
+
+const HOMEPAGE_CUSTMISER_COLLECTION_QUERY = `#graphql
+${PRODUCT_CARD_FRAGMENT}
+  query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    custmizerCollection : collection(handle: $handle) {
+      id
+      title
+      products (first : 10) {
+        nodes {
+          ...ProductCard
+        }
       }
     }
   }

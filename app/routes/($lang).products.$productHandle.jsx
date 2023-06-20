@@ -23,6 +23,7 @@ import {
   Link,
   AddToCartButton,
   Button,
+  ResponsiveIframe
 } from '~/components';
 import {getExcerpt} from '~/lib/utils';
 import {seoPayload} from '~/lib/seo.server';
@@ -30,6 +31,7 @@ import invariant from 'tiny-invariant';
 import clsx from 'clsx';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {routeHeaders, CACHE_SHORT} from '~/data/cache';
+import {BUGANO_PRODUCT_EDITOR_URL} from '~/lib/const';
 
 export const headers = routeHeaders;
 
@@ -105,7 +107,8 @@ export default function Product() {
 
   return (
     <>
-      <Section className="px-0 md:px-8 lg:px-12">
+      <ResponsiveIframe  url={`${BUGANO_PRODUCT_EDITOR_URL}?productKey=${product?.customizer_external_code?.value}`}/>
+      {/* <Section className="px-0 md:px-8 lg:px-12">
         <div className="grid items-start md:gap-6 lg:gap-20 md:grid-cols-2 lg:grid-cols-3">
           <ProductGallery
             media={media.nodes}
@@ -157,7 +160,7 @@ export default function Product() {
             <ProductSwimlane title="Related Products" products={products} />
           )}
         </Await>
-      </Suspense>
+      </Suspense> */}
     </>
   );
 }
@@ -516,6 +519,9 @@ const PRODUCT_QUERY = `#graphql
       handle
       descriptionHtml
       description
+      customizer_external_code: metafield(namespace: "custom", key: "customizer_external_code") {
+        value
+      }
       options {
         name
         values

@@ -25,5 +25,6 @@ export {Pagination, getPaginationVariables, usePagination} from './Pagination';
 export {AddToCartButton} from './AddToCartButton';
 export {SelectProduct} from './SelectProduct';
 export {ProductDetails} from './ProductDetails';
+export {ResponsiveIframe} from './ResponsiveIframe';
 // Sue me
 export * from './Icon';
