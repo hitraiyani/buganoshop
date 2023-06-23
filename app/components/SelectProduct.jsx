@@ -7,7 +7,7 @@ export function SelectProduct({className, products}) {
   return (
     <>
       <section className={`${className} relative select-product-sec py-[60px] overflow-hidden bg-[#f2f3f4]`}>
-        <div className="max-w-[1650px] mx-auto relative z-[2]">
+        <div className="max-w-[1650px] mx-auto relative z-[2] px-[30px]">
           <div className="logo-wrap max-w-[386px]">
             <img
               className="w-full"
@@ -20,7 +20,7 @@ export function SelectProduct({className, products}) {
               <div className="title mt-[51px]">
                 <h3 className="text-[18px] text-black">Select a Product to start customizing it now!</h3>
               </div> 
-              <div className="product-items grid grid-cols-3 gap-[30px] mt-[42px]">
+              <div className="product-items grid grid-cols-1 sm:lg:grid-cols-2 lg:grid-cols-3 gap-[30px] mt-[42px]">
                 {products.map((product,index) => {
                   
                    const firstVariant = flattenConnection(product.variants)[0];

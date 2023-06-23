@@ -6,7 +6,7 @@ export function ProductDetails({className}) {
       <section
         className={`${className} relative product-configurator-sec py-[60px] overflow-hidden bg-[#f2f3f4]`}
       >
-        <div className="max-w-[1650px] mx-auto relative z-[2]">
+        <div className="max-w-[1650px] mx-auto relative z-[2] px-[30px]">
           <div className="product-configurator-row flex gap-[86px]">
             <div className="col-left w-[60%]">
               <div className="col-inner">
