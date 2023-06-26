@@ -12,7 +12,7 @@ export function ResponsiveIframe({url}) {
         id="iFrame1"
         width={'100%'}
         // style={{height: iframeHeight}}
-        className=' max-[991px]:h-screen min-[992px]:h-[1480px] min-[1200px]:h-[1449px] min-[1400px]:h-[1269px] min-[1800px]:h-[1560px]'
+        className=' max-[991px]:h-[calc(100vh_-_40px)] min-[992px]:h-[1480px] min-[1200px]:h-[1449px] min-[1400px]:h-[1269px] min-[1800px]:h-[1560px]'
       />
     </div>
   );
