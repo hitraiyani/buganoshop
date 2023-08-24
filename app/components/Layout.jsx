@@ -23,22 +23,23 @@ import {Disclosure} from '@headlessui/react';
 import {Suspense, useEffect, useMemo} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
+import {Image} from '@shopify/hydrogen';
 
 export function Layout({children, layout}) {
   return (
     <>
-        <div className="">
-          <a href="#mainContent" className="sr-only">
-            Skip to content
-          </a>
-        </div>
-        <Header
-          title={layout?.shop.name ?? 'Hydrogen'}
-          menu={layout?.headerMenu}
-        />
-        <main role="main" id="mainContent" className="flex-grow">
-          {children}
-        </main>
+      <div className="">
+        <a href="#mainContent" className="sr-only">
+          Skip to content
+        </a>
+      </div>
+      <Header
+        title={layout?.shop.name ?? 'Hydrogen'}
+        menu={layout?.headerMenu}
+      />
+      <main role="main" id="mainContent" className="flex-grow">
+        {children}
+      </main>
       <Footer menu={layout?.footerMenu} />
     </>
   );
@@ -193,7 +194,14 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           className="font-bold text-center leading-none"
           as={isHome ? 'h1' : 'h2'}
         >
-          {title}
+          {/* {title} */}
+          <Image
+            data={{
+              url: 'https://cdn.shopify.com/s/files/1/0759/6241/7453/files/logo.svg?v=1683609783',
+            }}
+            alt="logo"
+            width={150}
+          />
         </Heading>
       </Link>
 
@@ -219,9 +227,16 @@ function DesktopHeader({isHome, menu, openCart, title}) {
         !isHome && y > 50 && ' shadow-lightHeader'
       } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
     >
-      <div className="flex gap-12">
+      <div className="flex gap-12 items-center">
         <Link className="font-bold" to="/" prefetch="intent">
-          {title}
+          {/* {title} */}
+          <Image
+            data={{
+              url: 'https://cdn.shopify.com/s/files/1/0759/6241/7453/files/logo.svg?v=1683609783',
+            }}
+            alt="logo"
+            width={300}
+          />
         </Link>
         <nav className="flex gap-8">
           {/* Top level menu items */}
